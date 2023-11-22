@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1a61c42-7ea7-4d98-bd1e-150aecf5c1db" name="Default" comment="Deleted log file">
+      <change afterPath="$PROJECT_DIR$/dynamics_sim-master/test.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/DyPy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DyPy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamics_sim-master/TestSimulations.py" beforeDir="false" afterPath="$PROJECT_DIR$/dynamics_sim-master/TestSimulations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamics_sim-master/games/ddmGame.py" beforeDir="false" afterPath="$PROJECT_DIR$/dynamics_sim-master/games/ddmGame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamics_sim-master/plotting/plot_thresholds.py" beforeDir="false" afterPath="$PROJECT_DIR$/dynamics_sim-master/plotting/plot_thresholds.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,8 +142,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: -1
+  &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="709" />
@@ -193,23 +198,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "DDM__Games",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/ANDREW/Documents/Coding/dynamics_sim/dynamics_sim-master/games",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ToolWindowPython Packages.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/abf204/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Python 3.11&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "Python"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;Python&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="PyDebuggerOptionsProvider">
     <option name="myAttachToSubprocess" value="false" />
     <option name="mySupportGeventDebugging" value="true" />
@@ -223,7 +229,7 @@
       <recent name="C:\Users\pinga\OneDrive\Documents\Coding\dynamics_sim\dynamics_sim-master\plotting" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for TestSimulations.TestCase">
+  <component name="RunManager" selected="Python tests.Unittests in TestSimulations.py">
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -243,7 +249,7 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <configuration name="scratch_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="ddmGame" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DyPy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -251,11 +257,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dynamics_sim-master/games" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dynamics_sim-master/games/ddmGame.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -264,7 +270,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="scratch_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="plot_thresholds" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DyPy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -272,11 +278,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dynamics_sim-master/plotting" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dynamics_sim-master/plotting/plot_thresholds.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -314,7 +320,7 @@
         <env name="PYCHARM_DEBUGGING" value="0" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../CWOL-dynamics_sim/dynamics_sim-master" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dynamics_sim-master" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -338,20 +344,34 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Unittests in TestSimulations.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="DyPy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dynamics_sim-master" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/dynamics_sim-master/TestSimulations.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Python.scratch_1" />
-      <item itemvalue="Python.scratch_2" />
+      <item itemvalue="Python.ddmGame" />
+      <item itemvalue="Python.plot_thresholds" />
       <item itemvalue="Python.scratch_3" />
+      <item itemvalue="Python tests.Unittests in TestSimulations.py" />
       <item itemvalue="Python tests.Unittests for TestSimulations.TestCase" />
-      <item itemvalue="Python tests.Unittests for TestSimulations.TestCase.test_contour_plots" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests in TestSimulations.py" />
+        <item itemvalue="Python.plot_thresholds" />
+        <item itemvalue="Python.ddmGame" />
         <item itemvalue="Python tests.Unittests for TestSimulations.TestCase" />
         <item itemvalue="Python.scratch_3" />
-        <item itemvalue="Python tests.Unittests for TestSimulations.TestCase.test_contour_plots" />
-        <item itemvalue="Python.scratch_2" />
-        <item itemvalue="Python.scratch_1" />
       </list>
     </recent_temporary>
   </component>
@@ -800,7 +820,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Software/Python/Python3/Lib/unittest/case.py" />
+    <entry file="file://$USER_HOME$/Software/Python/Python3/Lib/unittest/case.py" />
     <entry file="file://$PROJECT_DIR$/dynamics_sim-master/games/fashion_signaling.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">

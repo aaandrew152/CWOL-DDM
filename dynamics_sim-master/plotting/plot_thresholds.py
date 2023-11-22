@@ -9,7 +9,7 @@ import random
 
 superExpandRBShades.reverse()
 font_size = 18
-
+path = "C:/Users/abf204/OneDrive - University of Exeter/Desktop/Projects/CWOL/Figures/"
 
 class GraphOptions:
     COLORS_KEY = 'colors'
@@ -44,7 +44,7 @@ def _append_options(options):
 
 
 def generate_game(d_i=None):
-    if d_i:
+    if d_i is not None:
         punish_defect, c_min_max, no_look_reward, var, search_cost = \
             itemgetter('punish_defect', 'c_min_max', 'no_look_reward', 'var', 'search_cost')(def_params)
     else:
@@ -91,7 +91,8 @@ def plot_coop_rates(output, d_params):
     plt.ylim([0, 1.05])
     plt.plot(c_values, coop_outcomes)
     setup_plot(x_label, "Cooperation Probability", "d_i varies from " + str(d_params[0]) + " to " + str(d_params[1]))       
-    
+
+
 def plot_defection_rates(output, indiv_count, play_count, d_params):
     d_list = [x * (d_params[1] - d_params[0]) / d_params[2] + d_params[0] for x in range(d_params[2] + 1)]
 
@@ -104,6 +105,7 @@ def plot_defection_rates(output, indiv_count, play_count, d_params):
         modal_strat = sim.argmax()
         d_i = d_list[idx]
         def_prob = generate_game(d_i).defect_probs[modal_strat]
+        print(def_prob)
 
         outcome = np.random.binomial(play_count, def_prob, indiv_count)
         def_outcomes.extend(outcome)
@@ -112,14 +114,6 @@ def plot_defection_rates(output, indiv_count, play_count, d_params):
 
     weights = np.array([1 / len(def_outcomes) for _ in def_outcomes])
     plt.hist(def_outcomes, bins=bins, edgecolor='blue', weights=weights)
-
-    # import pandas as pd
-    # groups = [floor(idx * len(redBlueShades) / len(def_outcomes)) for idx, _ in enumerate(def_outcomes)]
-    # groups = np.array(groups)
-    # df = pd.DataFrame({'Counts': def_outcomes, 'd_i decile': groups})
-    # color_dict = {idx: shade for idx, shade in enumerate(redBlueShades)}
-    # color_list = [color_dict.get(x, '#333333') for x in df.columns]
-    # df.pivot(columns='d_i decile', values='Counts').plot.hist(stacked=True, weights=weights, color=color_list)
 
     x_label = "Defections out of " + str(play_count) + " plays"
     setup_plot(x_label, "Proportion", "d_i varies from " + str(d_params[0]) + " to " + str(d_params[1]))
@@ -131,10 +125,11 @@ def plot_defection_rates(output, indiv_count, play_count, d_params):
             x_values.append(defect_count)
         else:
             avg_dis.append(0)
+            x_values.append(x_values[-1]+1)
 
-    avg_dis_dict = {idx: avg_dis[idx] for idx, defect_num in enumerate(avg_dis)}
-    #plt.plot(x_values[1:], avg_dis[1:])
-    #plt.scatter(x_values[0], avg_dis[0])
+    # avg_dis_dict = {idx: avg_dis[idx] for idx, defect_num in enumerate(avg_dis)}
+    # plt.plot(x_values[1:], avg_dis[1:])
+    # plt.scatter(x_values[0], avg_dis[0])
     plt.bar(np.arange(play_count+1), avg_dis)
     setup_plot("Number of Defections", "Expected d_i", 'Expected d_i after observing defections')
 
@@ -143,6 +138,7 @@ def setup_plot(x_label, y_label, title):
     plt.xlabel(x_label, fontsize=font_size)
     plt.ylabel(y_label, fontsize=font_size)
     plt.title(title, fontsize=font_size)
+    plt.savefig(path + title + ".svg")
     plt.show()
 
 
@@ -431,4 +427,3 @@ def plot_contour_data_set(data, y_label, y_values, x_label, x_values, graph_opti
 
     plt.tight_layout()
     plt.show()
-

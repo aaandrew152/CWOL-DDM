@@ -19,7 +19,7 @@ else:
 center = int(half * total_thresh_count + half)
 start_state[0][0][center] += 100
 
-d_params = (-10, 10, 20)
+d_params = (-15, 15, 5)
 num_iters = 1
 
 # https://academic.oup.com/ej/advance-article-abstract/doi/10.1093/ej/uead055/7230363?redirectedFrom=fulltext&login=false
@@ -28,24 +28,23 @@ class TestCase(unittest.TestCase):
         pass #import logging
         #logging.basicConfig(filename='debug.log', level=logging.DEBUG)
 
-    def test_contour_plots(self):
+    def est_contour_plots(self):
         s = GameDynamicsWrapper(DDM, WrightFisher, game_kwargs=def_params,
                                 dynamics_kwargs=dynam_params)
         simulation = s.simulate(num_gens=1000, graph=False, return_labeled=False, start_state=start_state)
-        
-        # frequencies = convert_output(simulation)
+        frequencies = convert_output(simulation, total_thresh_count ** 2)
 
-        # plotting.plot_thresholds.prepare_contour_data(frequencies)
+        plotting.plot_thresholds.prepare_contour_data(frequencies)
         # plotting.plot_thresholds.single_plot_reaction_pdf(frequencies, total_time=0.1, count=100)
         # plotting.plot_thresholds.plot_logit()
 
-    def est_defection_over_d_i(self):  # Simulates while changing a single variable over time
+    def test_defection_over_d_i(self):  # Simulates while changing a single variable over time
         s = VariedGame(DDM, WrightFisher, game_kwargs=def_params, dynamics_kwargs=dynam_params)
         output = s.vary_param('d_i', d_params, num_gens=200, num_iterations=num_iters, graph=False)
 
         # plotting.plot_thresholds.parametric_modal_strat(output.data, d_params)
-        plotting.plot_thresholds.plot_defection_rates(output, 1000000, 50, d_params)
-        # plotting.plot_thresholds.plot_reaction_pdf(output, d_params, total_time=0.1, count=100)
+        plotting.plot_thresholds.plot_defection_rates(output, 1000000, 25, d_params)
+        # plotting.plot_thresholds.plot_reaction_pdf(output, d_params, total_time=0.1, count=10) #100
         # plotting.plot_thresholds.plot_coop_rates(output, d_params)
 
     def est_subj_plots(self):
@@ -53,13 +52,11 @@ class TestCase(unittest.TestCase):
         s = GameDynamicsWrapper(subjectiveDDM, WrightFisher, game_kwargs=def_params,
                                 dynamics_kwargs=dynam_params)
         simulation = s.simulate(num_gens=5000, return_labeled=False) # , graph=dict(shading='redblue'))
-        # frequencies = convert_output(simulation)
-        # plotting.plot_thresholds.single_plot_reaction_pdf(frequencies, total_time=0.1, count=100)
+        frequencies = convert_output(simulation, len(simulation[1][0]))
+        plotting.plot_thresholds.single_plot_reaction_pdf(frequencies, total_time=0.1, count=100)
 
 
-def convert_output(simulation):
-    strat_length = 10  # total_thresh_count ** 2  # len(simulation[1][0])
-
+def convert_output(simulation, strat_length):
     frequencies = np.zeros(strat_length)
     for period in np.array(simulation[1][0]):  # Take average strategies
         frequencies += period / len(simulation[1][0])

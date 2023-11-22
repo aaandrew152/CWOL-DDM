@@ -2,11 +2,11 @@ import math
 from games.game import SymmetricNPlayerGame
 import numpy as np
 
-thresh_count = 8
+thresh_count = 10
 total_thresh_count = thresh_count + 1
 thresholds = [round(tau / (2 * thresh_count), 2) for tau in range(total_thresh_count)]
 integral_boxes = 100
-def_params = dict(d_i=-5, punish_defect=10, c_min_max=[-20, 0], no_look_reward=1, var=0.5, search_cost=1)
+def_params = dict(d_i=0, punish_defect=10, c_min_max=[-20, 0], no_look_reward=0, var=0.5, search_cost=1)
 
 # TODO think about adding reinforcement learning in - see MH Rock paper scissors online (see Ido al roth Learning in experimental games paper)
 # TODO add "mistakes" when doing CWOL or DWOL
@@ -25,7 +25,6 @@ class DDM(SymmetricNPlayerGame):
             STRATEGY_LABELS.append('Thresholds: ' + str(round(tau_lower + 1/2, 2)) +
                                    ', ' + str(round(tau_upper + 1/2, 2)))
     EQUILIBRIA_LABELS = range(total_thresh_count ** 2)
-
 
     def __init__(self, d_i, punish_defect, c_min_max, var, search_cost, no_look_reward, equilibrium_tolerance=0.2):
         self.defect_util = d_i - punish_defect
@@ -62,7 +61,6 @@ class DDM(SymmetricNPlayerGame):
 
         if tau_lower >= 0:
             defect_prob = 0
-            
             self.coop_probs[-1] = [1 for c in self.c_dist]
         elif tau_upper <= 0:
             defect_prob = 1
@@ -77,7 +75,7 @@ class DDM(SymmetricNPlayerGame):
         return payoff, defect_prob
 
     def u_thresh(self, tau_lower, tau_upper):
-        if tau_lower == 0 and tau_upper == 0:  # We require either CWOL or DWOL
+        if tau_lower == 0 and tau_upper == 0:  # Both thresholds at 0 is undefined
             return -100
         elif tau_upper <= 0:  # DWOL
             return self.defect_util
@@ -111,7 +109,7 @@ class DDM(SymmetricNPlayerGame):
             stopping_denominator = (alpha * (self.var ** 2) / 2) * (math.e ** (- alpha * tau_upper) - math.e ** (alpha * -tau_lower))
             return stopping_numerator / stopping_denominator
 
-    def u_fixed_state(self, tau_lower, tau_upper, c):  # TODO Figure out how to fix prior
+    def u_fixed_state(self, tau_lower, tau_upper, c):
         alpha = 2 * (self.defect_util - c) / (self.var ** 2)
 
         p_defect = self.compute_defect_prob(alpha, tau_lower, tau_upper)
