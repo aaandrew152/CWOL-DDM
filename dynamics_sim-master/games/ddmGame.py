@@ -6,10 +6,7 @@ thresh_count = 10
 total_thresh_count = thresh_count + 1
 thresholds = [round(tau / (2 * thresh_count), 2) for tau in range(total_thresh_count)]
 integral_boxes = 100
-def_params = dict(d_i=0, punish_defect=10, c_min_max=[-20, 0], no_look_reward=0, var=0.5, search_cost=1)
-
-# TODO think about adding reinforcement learning in - see MH Rock paper scissors online (see Ido al roth Learning in experimental games paper)
-# TODO add "mistakes" when doing CWOL or DWOL
+def_params = dict(d_i=0, punish_defect=10, c_min_max=[-20, 0], no_look_reward=1, var=0.5, search_cost=1)
 
 
 class DDM(SymmetricNPlayerGame):

@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1a61c42-7ea7-4d98-bd1e-150aecf5c1db" name="Default" comment="Deleted log file">
-      <change afterPath="$PROJECT_DIR$/dynamics_sim-master/test.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/DyPy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DyPy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d1a61c42-7ea7-4d98-bd1e-150aecf5c1db" name="Default" comment="Improvements to functions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dynamics_sim-master/TestSimulations.py" beforeDir="false" afterPath="$PROJECT_DIR$/dynamics_sim-master/TestSimulations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dynamics_sim-master/games/ddmGame.py" beforeDir="false" afterPath="$PROJECT_DIR$/dynamics_sim-master/games/ddmGame.py" afterDir="false" />
@@ -481,7 +478,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693391225069</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Improvements to functions">
+      <option name="closed" value="true" />
+      <created>1700664533808</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1700664533808</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -585,7 +590,8 @@
     <MESSAGE value="Created DDM game along with graphing method" />
     <MESSAGE value="DDM simulations of CWOL" />
     <MESSAGE value="Deleted log file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Deleted log file" />
+    <MESSAGE value="Improvements to functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improvements to functions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

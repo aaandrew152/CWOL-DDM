@@ -6,6 +6,7 @@ from games.ddmGame import DDM, total_thresh_count, thresholds, def_params, integ
 from operator import itemgetter
 from plotting.plot import superExpandRBShades, redBlueShades
 import random
+from itertools import chain
 
 superExpandRBShades.reverse()
 font_size = 18
@@ -90,7 +91,7 @@ def plot_coop_rates(output, d_params):
     
     plt.ylim([0, 1.05])
     plt.plot(c_values, coop_outcomes)
-    setup_plot(x_label, "Cooperation Probability", "d_i varies from " + str(d_params[0]) + " to " + str(d_params[1]))       
+    setup_plot(x_label, "Cooperation Probability", "$d_i$ varies from " + str(d_params[0]) + " to " + str(d_params[1]))
 
 
 def plot_defection_rates(output, indiv_count, play_count, d_params):
@@ -105,18 +106,17 @@ def plot_defection_rates(output, indiv_count, play_count, d_params):
         modal_strat = sim.argmax()
         d_i = d_list[idx]
         def_prob = generate_game(d_i).defect_probs[modal_strat]
-        print(def_prob)
 
         outcome = np.random.binomial(play_count, def_prob, indiv_count)
         def_outcomes.extend(outcome)
-        for num_defects in range(play_count):
+        for num_defects in range(play_count+1):
             di_bins[num_defects].extend(d_i for _ in range(np.count_nonzero(outcome == num_defects)))
 
     weights = np.array([1 / len(def_outcomes) for _ in def_outcomes])
     plt.hist(def_outcomes, bins=bins, edgecolor='blue', weights=weights)
 
     x_label = "Defections out of " + str(play_count) + " plays"
-    setup_plot(x_label, "Proportion", "d_i varies from " + str(d_params[0]) + " to " + str(d_params[1]))
+    setup_plot(x_label, "Proportion", "$d_i$ varies from " + str(d_params[0]) + " to " + str(d_params[1]))
 
     avg_dis, x_values = [], []
     for defect_count, di_bin in enumerate(di_bins):
@@ -131,13 +131,13 @@ def plot_defection_rates(output, indiv_count, play_count, d_params):
     # plt.plot(x_values[1:], avg_dis[1:])
     # plt.scatter(x_values[0], avg_dis[0])
     plt.bar(np.arange(play_count+1), avg_dis)
-    setup_plot("Number of Defections", "Expected d_i", 'Expected d_i after observing defections')
+    setup_plot("Number of Defections", "Expected $d_i$", 'Expected $d_i$ after observing defections')
 
 
 def setup_plot(x_label, y_label, title):
     plt.xlabel(x_label, fontsize=font_size)
     plt.ylabel(y_label, fontsize=font_size)
-    plt.title(title, fontsize=font_size)
+    # plt.title(title, fontsize=font_size)
     plt.savefig(path + title + ".svg")
     plt.show()
 
@@ -319,8 +319,9 @@ def plot_reaction_pdf(output, d_params, total_time=.1, count=10):
     plt.legend()
     setup_plot("Time", "CDF", "Normalized stopping times when defect reward varies")
 
-    plt.plot(x_values, d_avgs)
-    setup_plot("Time of Cooperation", "Expected d_i", 'Time-specific expected d_i upon cooperation')
+    plt.scatter(x_values[0], d_avgs[0], marker='o', facecolors='none', edgecolors='b')
+    plt.plot(x_values[1:], d_avgs[1:], 'b')
+    setup_plot("Time of Cooperation", "Expected $d_i$", 'Time-specific expected $d_i$ upon cooperation')
 
 
 def get_d_list(d_params):
@@ -355,7 +356,7 @@ def parametric_modal_strat(output, d_params):
     plt.scatter(interp_x_values, interp_y_values, c=interp_t_values, clim=(d_list[0], d_list[-1]), cmap='plasma', marker='_')
     plt.scatter(x_values, y_values, c=d_list, cmap='plasma')
 
-    plt.colorbar(pad=0.08, label='Defect Payoff (d_i + punish_defect)')
+    plt.colorbar(pad=0.08, label='Defect Payoff ($d_i$ + punish_defect)')
     # If we want double ticks: https://stackoverflow.com/questions/27151098/draw-colorbar-with-twin-scales
     generate_axes(plt, x_values, y_values, font_size)
     plt.title('Modal Outcomes as Defect Payoff Varies', fontsize=font_size)
@@ -364,20 +365,25 @@ def parametric_modal_strat(output, d_params):
     plt.show()
 
 
-def prepare_contour_data(frequencies):
+def prepare_contour_data(frequencies, weight=False):
     frequencies = frequencies / sum(frequencies)
 
     cwol_prop, dwol_prop = find_wol_props(frequencies, total_thresh_count)
 
-    for idx, freq in enumerate(frequencies):  # Distribution CWOL and DWOL evenly
-        if idx % total_thresh_count == 0 and idx > 0:
-            frequencies[idx] = dwol_prop #/ (total_thresh_count - 1)
-        if floor(idx / total_thresh_count) == 0 and idx > 0:
-            frequencies[idx] = cwol_prop #/ (total_thresh_count - 1)
+    if not weight:
+        for idx, freq in enumerate(frequencies):  # Distribution CWOL and DWOL evenly
+            if idx % total_thresh_count == 0 and idx > 0:
+                frequencies[idx] = dwol_prop #/ (total_thresh_count - 1)
+            if floor(idx / total_thresh_count) == 0 and idx > 0:
+                frequencies[idx] = cwol_prop #/ (total_thresh_count - 1)
 
     twoD_frequencies = [[] for _ in range(total_thresh_count)]
     for idx, freq in enumerate(frequencies):
         twoD_frequencies[floor(idx / total_thresh_count)].append(min(freq, 1))
+
+    if weight: # Scales maximum to one
+        factor = max(list(chain(*twoD_frequencies)))
+        twoD_frequencies = twoD_frequencies/factor
 
     upper_thresholds = [thresh + 1 / 2 for thresh in thresholds]
 
@@ -386,9 +392,9 @@ def prepare_contour_data(frequencies):
     plot_contour_data_set(twoD_frequencies, xkey, thresholds, ykey, upper_thresholds)
     
     
-def plot_logit():
+def plot_logit(weight=1):
     payoffs = generate_game().tau_list
-    weight = 10
+
     realistic_payoff_sum = 0
     for payoff in payoffs:  # Undo outlier
         realistic_payoff_sum += exp(weight*payoff)
@@ -401,7 +407,8 @@ def plot_logit():
     for soft_util in soft_utils:
         normalized_soft_utils.append((soft_util - min(soft_utils[1:])) / (max(soft_utils) - min(soft_utils[1:])))
 
-    prepare_contour_data(normalized_soft_utils)
+    normalized_soft_utils = (np.array(normalized_soft_utils)) # Preparation for summation
+    return normalized_soft_utils
 
 
 def plot_contour_data_set(data, y_label, y_values, x_label, x_values, graph_options=None):
@@ -418,12 +425,12 @@ def plot_contour_data_set(data, y_label, y_values, x_label, x_values, graph_opti
     cs = plt.contourf(x_values, y_values, data, levels, colors=colors)
 
     plt.colorbar(cs, orientation='horizontal')
-    plt.title('Resulting Strategies', fontsize=font_size)
-    plt.xlabel(x_label, fontsize=font_size)
-    plt.ylabel(y_label, fontsize=font_size)
-
     line_array = generate_wol_lines()
     graphLines(line_array, plt)
 
     plt.tight_layout()
+    plt.xlabel(x_label, fontsize=font_size)
+    plt.ylabel(y_label, fontsize=font_size)
+    # plt.title(title, fontsize=font_size)
+
     plt.show()
