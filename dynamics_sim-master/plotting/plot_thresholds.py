@@ -131,6 +131,7 @@ def plot_defection_rates(output, indiv_count, play_count, d_params):
     # plt.plot(x_values[1:], avg_dis[1:])
     # plt.scatter(x_values[0], avg_dis[0])
     plt.bar(np.arange(play_count+1), avg_dis)
+    plt.axis([None, None, d_list[0], d_list[-1]])
     setup_plot("Number of Defections", "Expected $d_i$", 'Expected $d_i$ after observing defections')
 
 
@@ -319,8 +320,9 @@ def plot_reaction_pdf(output, d_params, total_time=.1, count=10):
     plt.legend()
     setup_plot("Time", "CDF", "Normalized stopping times when defect reward varies")
 
-    plt.scatter(x_values[0], d_avgs[0], marker='o', facecolors='none', edgecolors='b')
-    plt.plot(x_values[1:], d_avgs[1:], 'b')
+    plt.scatter(x_values[0], d_avgs[0], marker='o', edgecolors='b') # facecolors='none',
+    plt.scatter(x_values[1], d_avgs[1], marker='o', facecolors='none', edgecolors='b')
+    plt.plot(x_values[2:], d_avgs[2:], 'b')
     setup_plot("Time of Cooperation", "Expected $d_i$", 'Time-specific expected $d_i$ upon cooperation')
 
 

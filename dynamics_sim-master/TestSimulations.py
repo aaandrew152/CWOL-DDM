@@ -19,8 +19,8 @@ else:
 center = int(half * total_thresh_count + half)
 start_state[0][0][center] += 100
 
-d_params = (-15, 15, 20)
-num_iters = 1
+d_params = (-15, 15, 3) # 20
+num_iters = 1 # 3
 
 # https://academic.oup.com/ej/advance-article-abstract/doi/10.1093/ej/uead055/7230363?redirectedFrom=fulltext&login=false
 class TestCase(unittest.TestCase):
@@ -45,8 +45,8 @@ class TestCase(unittest.TestCase):
         output = s.vary_param('d_i', d_params, num_gens=200, num_iterations=num_iters, graph=False)
 
         # plotting.plot_thresholds.parametric_modal_strat(output.data, d_params)
-        # plotting.plot_thresholds.plot_defection_rates(output, 1000000, 25, d_params)
-        plotting.plot_thresholds.plot_reaction_pdf(output, d_params, total_time=0.1, count=50)
+        #plotting.plot_thresholds.plot_defection_rates(output, 1000000, 25, d_params)
+        plotting.plot_thresholds.plot_reaction_pdf(output, d_params, total_time=0.1, count=200) # 100
         # plotting.plot_thresholds.plot_coop_rates(output, d_params)
 
     def est_subj_plots(self):

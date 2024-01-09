@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1a61c42-7ea7-4d98-bd1e-150aecf5c1db" name="Default" comment="Improvements to functions">
+    <list default="true" id="d1a61c42-7ea7-4d98-bd1e-150aecf5c1db" name="Default" comment="Graph cleanup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dynamics_sim-master/TestSimulations.py" beforeDir="false" afterPath="$PROJECT_DIR$/dynamics_sim-master/TestSimulations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dynamics_sim-master/games/ddmGame.py" beforeDir="false" afterPath="$PROJECT_DIR$/dynamics_sim-master/games/ddmGame.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dynamics_sim-master/plotting/plot_thresholds.py" beforeDir="false" afterPath="$PROJECT_DIR$/dynamics_sim-master/plotting/plot_thresholds.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,6 +103,20 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;aaandrew152&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="bee44201-cc50-48c4-bb2e-850432277c12" />
+        <option name="url" value="https://github.com/aaandrew152/CWOL-DDM" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -195,24 +208,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;ToolWindowPython Packages.ShowToolbar&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/abf204/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Python 3.11&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Python tests.Unittests in TestSimulations.py.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ToolWindowPython Packages.ShowToolbar": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/abf204/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Python 3.11",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;Python&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "Python"
     ]
   }
-}</component>
+}]]></component>
   <component name="PyDebuggerOptionsProvider">
     <option name="myAttachToSubprocess" value="false" />
     <option name="mySupportGeventDebugging" value="true" />
@@ -248,6 +262,7 @@
     </configuration>
     <configuration name="ddmGame" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DyPy" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -269,6 +284,7 @@
     </configuration>
     <configuration name="plot_thresholds" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DyPy" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -290,6 +306,7 @@
     </configuration>
     <configuration name="scratch_3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DyPy" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -311,6 +328,7 @@
     </configuration>
     <configuration name="Unittests for TestSimulations.TestCase" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="DyPy" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -343,6 +361,7 @@
     </configuration>
     <configuration name="Unittests in TestSimulations.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="DyPy" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
@@ -359,8 +378,8 @@
       <item itemvalue="Python.ddmGame" />
       <item itemvalue="Python.plot_thresholds" />
       <item itemvalue="Python.scratch_3" />
-      <item itemvalue="Python tests.Unittests in TestSimulations.py" />
       <item itemvalue="Python tests.Unittests for TestSimulations.TestCase" />
+      <item itemvalue="Python tests.Unittests in TestSimulations.py" />
     </list>
     <recent_temporary>
       <list>
@@ -371,6 +390,13 @@
         <item itemvalue="Python.scratch_3" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-50da183f06c8-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13135.95" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -486,7 +512,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700664533808</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Graph cleanup">
+      <option name="closed" value="true" />
+      <created>1701871906224</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1701871906224</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -591,7 +625,8 @@
     <MESSAGE value="DDM simulations of CWOL" />
     <MESSAGE value="Deleted log file" />
     <MESSAGE value="Improvements to functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improvements to functions" />
+    <MESSAGE value="Graph cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Graph cleanup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
