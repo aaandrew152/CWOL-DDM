@@ -321,8 +321,8 @@ def plot_reaction_pdf(output, d_params, total_time=.1, count=10):
     setup_plot("Time", "CDF", "Normalized stopping times when defect reward varies")
 
     plt.scatter(x_values[0], d_avgs[0], marker='o', edgecolors='b') # facecolors='none',
-    plt.scatter(x_values[1], d_avgs[1], marker='o', facecolors='none', edgecolors='b')
-    plt.plot(x_values[2:], d_avgs[2:], 'b')
+    #plt.scatter(x_values[1], d_avgs[1], marker='o', facecolors='none', edgecolors='b')
+    plt.plot(x_values[1:], d_avgs[1:], 'b')
     setup_plot("Time of Cooperation", "Expected $d_i$", 'Time-specific expected $d_i$ upon cooperation')
 
 

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1a61c42-7ea7-4d98-bd1e-150aecf5c1db" name="Default" comment="Graph cleanup">
+    <list default="true" id="d1a61c42-7ea7-4d98-bd1e-150aecf5c1db" name="Default" comment="Correctly displays discontinuity in reaction inference now">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dynamics_sim-master/TestSimulations.py" beforeDir="false" afterPath="$PROJECT_DIR$/dynamics_sim-master/TestSimulations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dynamics_sim-master/plotting/plot_thresholds.py" beforeDir="false" afterPath="$PROJECT_DIR$/dynamics_sim-master/plotting/plot_thresholds.py" afterDir="false" />
@@ -208,25 +208,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "Python tests.Unittests in TestSimulations.py.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ToolWindowPython Packages.ShowToolbar": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/abf204/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Python 3.11",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Python tests.Unittests in TestSimulations.py.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ToolWindowPython Packages.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/abf204/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Python 3.11&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "Python"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;Python&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="PyDebuggerOptionsProvider">
     <option name="myAttachToSubprocess" value="false" />
     <option name="mySupportGeventDebugging" value="true" />
@@ -520,7 +520,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701871906224</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Correctly displays discontinuity in reaction inference now">
+      <option name="closed" value="true" />
+      <created>1704806824392</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1704806824392</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -626,7 +634,8 @@
     <MESSAGE value="Deleted log file" />
     <MESSAGE value="Improvements to functions" />
     <MESSAGE value="Graph cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Graph cleanup" />
+    <MESSAGE value="Correctly displays discontinuity in reaction inference now" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correctly displays discontinuity in reaction inference now" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
